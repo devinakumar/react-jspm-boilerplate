@@ -6,7 +6,6 @@ import { Router, Route, browserHistory } from 'react-router';
 import { syncHistoryWithStore, routerReducer, routerMiddleware } from 'react-router-redux';
 import thunk from 'redux-thunk';
 
-import logger from 'src/middlewares/logger';
 import { AppContainer } from 'src/components/App.jsx!';
 import appReducer from 'src/reducers/app-reducer.js';
 
@@ -14,7 +13,7 @@ const store = createStore(
   combineReducers({
     routing: routerReducer,
     app: appReducer
-  }), applyMiddleware(logger, thunk, routerMiddleware(browserHistory))
+  }), applyMiddleware(thunk, routerMiddleware(browserHistory))
 );
 
 const history = syncHistoryWithStore(browserHistory, store);
