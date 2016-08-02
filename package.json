@@ -1,8 +1,8 @@
 {
   "jspm": {
     "dependencies": {
+      "babel-plugin-transform-react-jsx": "npm:babel-plugin-transform-react-jsx@^6.8.0",
       "immutable": "npm:immutable@^3.8.1",
-      "jsx": "github:floatdrop/plugin-jsx@^1.2.1",
       "react": "npm:react@^15.0.1",
       "react-addons-test-utils": "npm:react-addons-test-utils@^15.0.1",
       "react-dom": "npm:react-dom@^15.0.1",

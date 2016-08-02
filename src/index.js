@@ -6,16 +6,15 @@ import { Router, Route, browserHistory } from 'react-router';
 import { syncHistoryWithStore, routerReducer, routerMiddleware } from 'react-router-redux';
 import thunk from 'redux-thunk';
 
-import { AppContainer } from 'src/components/App.jsx!';
+import { AppContainer } from 'src/components/App';
 import appReducer from 'src/reducers/app-reducer.js';
 
-const store = createStore(
-  combineReducers({
-    routing: routerReducer,
-    app: appReducer
-  }), applyMiddleware(thunk, routerMiddleware(browserHistory))
-);
-
+const reducers = combineReducers({
+  routing: routerReducer,
+  app: appReducer
+});
+const middlewares = applyMiddleware(thunk, routerMiddleware(browserHistory));
+const store = createStore(reducers, middlewares);
 const history = syncHistoryWithStore(browserHistory, store);
 
 ReactDOM.render(
