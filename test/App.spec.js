@@ -1,6 +1,6 @@
 import React from 'react';
 import { renderIntoDocument } from 'react-addons-test-utils';
-import { App } from './../src/components/App.jsx!'
+import { App } from './../src/components/App'
 
 function createComponent(props = {}) {
   return renderIntoDocument( <App />);
